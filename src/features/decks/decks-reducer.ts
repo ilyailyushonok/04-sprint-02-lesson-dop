@@ -15,7 +15,7 @@ export type deckType = {
 } //? то, что с сервера пришло
 
 const initialState = {
-  decks: [] as deckType[], // todo: add type
+  decks: [] as deckType[],
   searchParams: {
     name: '',
   },
