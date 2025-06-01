@@ -1,17 +1,16 @@
 import { DecksList } from './DecksList/DecksList.tsx'
 import { AddNewDeckForm } from './AddNewDeckForm/AddNewDeckForm.tsx'
 import { useEffect } from 'react'
-import { useAppSelector } from '../../app/store.ts'
+import { useAppDispatch, useAppSelector } from '../../app/store.ts'
 import { fetchDecksTC } from './decks-thunks.ts'
-import { useDispatch } from 'react-redux'
 
 export const Decks = () => {
   const decks = useAppSelector((state) => state.decksReducer.decks)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchDecksTC())
-  },[])
+    dispatch(fetchDecksTC());
+  }, []);
 
   return (
     <div>
