@@ -15,7 +15,7 @@ export type deckType = {
 } //? то, что с сервера пришло
 
 const initialState = {
-  decks: [] as any[], // todo: add type
+  decks: [] as deckType[], // todo: add type
   searchParams: {
     name: '',
   },
@@ -26,7 +26,9 @@ type DecksState = typeof initialState
 export const decksReducer = (state: DecksState = initialState, action: DecksActions): DecksState => {
   switch (action.type) {
     case 'getDecks':
-      return {...state, decks: action.payload.decks }
+      return { ...state, decks: action.payload.decks }
+    case 'addDesk':
+      return { ...state, decks: [action.payload.deck, ...state.decks] }
     default:
       return state
   }
@@ -34,6 +36,4 @@ export const decksReducer = (state: DecksState = initialState, action: DecksActi
 
 type DecksActions = any
 
-// export const getDecksAC=(x)=>{
-//   return {type: 'getDecks',decks: x}
-// }
+

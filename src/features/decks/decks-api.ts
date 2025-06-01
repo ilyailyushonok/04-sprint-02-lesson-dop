@@ -9,5 +9,8 @@ export const instance = axios.create({
 export const apiDecks={
   getDecks(){
    return  instance.get(`/v2/decks`).then(res => res.data.items )
+  },
+  addDesk(name:string){
+   return instance.post(`/v1/decks`, { name }).then((res) => res.data)
   }
 }

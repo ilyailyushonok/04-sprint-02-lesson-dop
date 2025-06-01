@@ -7,7 +7,7 @@ type Props = {
 export const DecksList = ({decks}:Props) => {
   return <ul className={s.list}>
     {decks.map(d => (
-      <li key={d.name}>
+      <li key={d.id}>
         <h2>{d.name}</h2>
         <div>Author: {d.author.name}</div>
         <div>Created: {d.created}</div>

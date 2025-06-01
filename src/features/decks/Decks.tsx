@@ -10,8 +10,8 @@ export const Decks = () => {
 
   useEffect(() => {
     dispatch(fetchDecksTC());
-  }, []);
-
+  },[]);
+  console.log(decks)
   return (
     <div>
       <h1>Decks 🦝</h1>
